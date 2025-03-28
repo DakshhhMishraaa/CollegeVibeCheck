@@ -1,0 +1,499 @@
+*{
+    font-family: 'Tomorrow', sans-serif;
+}
+
+body{
+    background-color:#476b93;
+}
+/* background-color:#476b93; */
+
+/*Future bg-image*/
+.h{
+    background-image: url(../imgs/Collegenewbg.png);
+    background-size: cover; /* Covers the entire div */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; /* No tiling */
+}
+
+body{
+    margin:0;
+}
+
+.fullnavbar {
+    display: flex;
+    flex-direction: row;
+    min-height: 50px;
+    justify-content: flex-start;
+    gap: 10px; 
+    background-color:#132f4f;
+    height: 70px;
+}
+
+.logobar {
+    display: flex;
+    margin-left: 10px;
+    padding:1px;
+    color: white;
+}
+
+.navbar {
+    display:flex;
+    padding-top:5px;
+    padding-left:5%;
+    padding-right:10%;
+    align-items: center;
+    justify-content: center;
+    background-color:#174273;
+    border-radius: 10px;
+    text-shadow: 0px 1px 1px black;
+    width:1000px;
+    height: 50px;
+    margin-top: 8px;
+    gap:20px;
+}
+span{
+    /* height: 80px; */
+    box-shadow: none;
+}
+
+.navbar a {
+    color:antiquewhite;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 30px;
+    list-style-type:none;
+    padding:10px;
+    display:inline-block;
+    text-align: center;
+    font-family: 'Tomorrow', sans-serif;
+    letter-spacing: 2px;
+}
+
+.navbar2 {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content */
+    background-color: none;
+    border-radius: 10px;
+    padding: 10px 20px; /* Adjust spacing */
+    width: fit-content; /* Adjust width automatically */
+    /* box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  */
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    height: 40px;
+    margin-top: 5px;
+    margin-right: 7px;
+}
+
+/* Styling for the links */
+.navbar2 a {
+    text-decoration: none;
+    color: white;
+    padding: 0 10px; /* Space between text and separator */
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.navbar2 a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.sign-in-btn {
+    display: inline-block;
+    background-color: #345d32; /* Greenish color */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Tomorrow', sans-serif;
+    clip-path: polygon(51% 0, 100% 29%, 100% 72%, 50% 100%, 0 72%, 0 27%);
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.login-font{
+    font-size: 18px;
+}
+
+.sign-in-btn:hover {
+    background-color: #2a4a28; /* Darker shade on hover */
+}
+
+/* Separator styling */
+/* .navbar2 span {
+    color: gray;
+    font-weight: bold;
+    padding: 0 5px;
+} */
+
+#Login {
+    background-color: #476b93; /* Blue color */
+    color: white; /* Text color */
+    font-size: 16px; /* Text size */
+    padding: 10px 20px; /* Space inside button */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Changes cursor to pointer */
+}
+
+.content1 {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black;  */
+    min-height: 400px;
+    width:100%;
+    justify-content: flex-start;
+    gap: 10px; 
+    background-color:#476b93;
+    /* background-size: cover; Covers the entire div */
+    /* background-position: center; */
+    /* background-attachment: fixed; */
+    /* background-repeat: no-repeat; No tiling */
+}
+
+.row1, .row2 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; 
+    padding-bottom: 10px;
+    /* border: 2px solid black;  */
+}
+
+
+
+.college { 
+    width: 1200px;
+    height: 200px;
+    /* border: 2px solid black;  */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+    color: black;
+    font-family: 'Tomorrow', sans-serif;    
+    font-weight: 300;
+    font-size: 100px;
+    margin:10px;
+    background-color: #669edf;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.t1 { 
+    width: 300px;
+    height: 200px;
+    /* border: 2px solid black;  */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 30px;
+    color: black;
+    margin:10px;
+    padding: 20px;
+    font-family: 'Tomorrow', sans-serif;    
+    font-weight: 500;
+    background-color:#669edf;
+}
+.t2 { 
+    width: 300px;
+    height: 200px;
+    /* border: 2px solid black;  */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: black;
+    margin:10px;
+    padding: 10px;
+    font-family: 'Tomorrow', sans-serif;    
+    font-weight: 500;
+    background-color: #669edf;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+
+}
+.vibecheck { 
+    width: 1200px;
+    height: 200px;
+    /* border: 2px solid black;  */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: black;
+    font-size: 85px;
+    margin:10px;
+    padding: 1px;
+    font-family: 'Tomorrow', sans-serif;    
+    background-color:#669edf;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/*------------ section II  -------------*/
+
+.pics{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid black;  */
+    width: 100%;
+    height: 600px;
+    margin-top: 30px;
+}
+
+.pic1{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black;      */
+    width: 350px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color:#476b93;
+}
+
+.arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    /* border: 2px solid black; */
+    background-color: #669edf;
+    border-radius: 100px;
+    margin-top: 3px;
+}
+
+.feedback {
+    position: relative;
+    display: flex;
+    background-color: #669edf;
+    /* border: 2px solid black; */
+    width:300px;
+    justify-content: center;
+    align-items:center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-link {
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+    position: relative;
+    font-family:'Tomorrow', sans-serif;
+}
+
+/* Tooltip styling */
+.feedback-link::after {
+    content: attr(data-preview);
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 220px;
+    background: white;
+    color: black;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    white-space: normal;
+}
+
+/* Show tooltip on hover */
+.feedback-link:hover::after {
+    display: block;
+}
+
+.pic11 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 300px; 
+    border-radius: 10px; /* Rounded corners */
+    /* border: 0.5px solid black; */
+    overflow: hidden; /* Ensures image does not overflow */
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.pic11 img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover; /* Ensures image fills the div */
+    border-radius: 10px; /* Ensures image also gets rounded corners */
+}
+
+
+.pic2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 600px; 
+    border-radius: 0px; /* Rounded corners */
+    /* border: 0.5px solid black; */
+    overflow: hidden; /* Ensures image does not overflow */
+    gap:10px;
+    background-color:#476b93;
+}
+
+.pic2-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px; 
+    border-radius: 10px; /* Rounded corners */
+    /* border: 0.5px solid black; */
+    overflow: hidden; /* Ensures image does not overflow */
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    margin: 3px;
+    margin-top: 3px;
+}
+
+.pic2-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 300px; 
+    border-radius: 10px; /* Rounded corners */
+    /* border: 0.5px solid black; */
+    overflow: hidden; /* Ensures image does not overflow */
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.pic2-1 img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover; /* Ensures image fills the div */
+    border-radius: 10px; 
+}
+
+.pic2-2 img {
+    width: 350px;
+    height: 300px;
+    object-fit: cover; /* Ensures image fills the div */
+    border-radius: 10px; 
+}
+
+.pic3{
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid black;  */
+    width: 830px;
+    height: 600px;   
+    background-color:#476b93;
+}
+
+.accordion {
+    margin:3px;
+    display: flex;
+    flex-direction: column;
+    width: 830px;
+    background-color:#476b93;
+    color: white;
+    font-family: Arial, sans-serif;
+    gap:4px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #161414;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7359d9;
+    border-radius: 5px;
+}
+
+.accordion-header::after {
+    content: "▼"; /* Downward arrow */
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+    transform: rotate(180deg); /* Flip arrow when active */
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 15px;
+    background-color: #333;
+}
+
+.SS-container{
+    position: relative;
+    width:300px;
+    height:200px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.slidehsow{
+    display: flex;
+    width: 300%;
+    animation: slide 4s infinite;
+}
+
+.slide{
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.dots{
+    text-align:center;
+    margin-top:10px;
+}
+
+.dots input{
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    margin:5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dots input:checked{
+    background-color: #333;
+}
+
+@keyframes slide{
+    0%, 33% { transform: translate(0); }
+    34%, 66% { transform: translate(-100%); }
+    67%, 100% { transform: translate(-200%); }
+}
