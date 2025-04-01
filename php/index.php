@@ -19,7 +19,7 @@
         </div>
 
         <div class="navbar">
-            <a href>Home</a>
+            <a href="../php/index.php">Home</a>
             <span>|</span>
             <a href>Colleges</a>
             <span>|</span>
@@ -29,11 +29,14 @@
         </div>
 
         <div class="navbar2">
-            <a href="signin.html" class="sign-in-btn">
+            <a href="/php/login.php" class="sign-in-btn">
                 <h3 class="login-font">Login</h3>
             </a>
+
+            <a href="../html/register.html" class="sign-in-btn">
+                <h3 class="login-font">Sign-Up</h3>
+            </a>
         </div>
-        
     </div>
    
     <div class="content1">

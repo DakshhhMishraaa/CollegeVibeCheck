@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color:#476b93;
+    background-color:#b1b3b5;
 }
 /* background-color:#476b93; */
 
@@ -26,7 +26,7 @@ body{
     min-height: 50px;
     justify-content: flex-start;
     gap: 10px; 
-    background-color:#132f4f;
+    background-color:#57595b;
     height: 70px;
 }
 
@@ -44,10 +44,10 @@ body{
     padding-right:10%;
     align-items: center;
     justify-content: center;
-    background-color:#174273;
+    background-color:#7e8286;
     border-radius: 10px;
     text-shadow: 0px 1px 1px black;
-    width:1000px;
+    width:920px;
     height: 50px;
     margin-top: 8px;
     gap:20px;
@@ -85,6 +85,7 @@ span{
     height: 40px;
     margin-top: 5px;
     margin-right: 7px;
+    gap:20px;
 }
 
 /* Styling for the links */
@@ -96,6 +97,7 @@ span{
 }
 
 /* Hover Effect */
+.navbar a:hover, 
 .navbar2 a:hover {
     color: #007bff; /* Change color on hover */
 }
@@ -147,7 +149,7 @@ span{
     width:100%;
     justify-content: flex-start;
     gap: 10px; 
-    background-color:#476b93;
+    background-color:#b1b3b5;
     /* background-size: cover; Covers the entire div */
     /* background-position: center; */
     /* background-attachment: fixed; */
@@ -178,7 +180,7 @@ span{
     font-weight: 300;
     font-size: 100px;
     margin:10px;
-    background-color: #669edf;
+    background-color: #7e8286;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -196,7 +198,7 @@ span{
     padding: 20px;
     font-family: 'Tomorrow', sans-serif;    
     font-weight: 500;
-    background-color:#669edf;
+    background-color:#7e8286;
 }
 .t2 { 
     width: 300px;
@@ -212,7 +214,7 @@ span{
     padding: 10px;
     font-family: 'Tomorrow', sans-serif;    
     font-weight: 500;
-    background-color: #669edf;
+    background-color: #7e8286;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 
 }
@@ -230,7 +232,7 @@ span{
     margin:10px;
     padding: 1px;
     font-family: 'Tomorrow', sans-serif;    
-    background-color:#669edf;
+    background-color:#7e8286;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -257,7 +259,7 @@ span{
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background-color:#476b93;
+    background-color:#b1b3b5;
 }
 
 .arrow{
@@ -267,7 +269,7 @@ span{
     height: 200px;
     width: 200px;
     /* border: 2px solid black; */
-    background-color: #669edf;
+    background-color: #345d32;
     border-radius: 100px;
     margin-top: 3px;
 }
@@ -275,7 +277,7 @@ span{
 .feedback {
     position: relative;
     display: flex;
-    background-color: #669edf;
+    background-color: #7e8286;
     /* border: 2px solid black; */
     width:300px;
     justify-content: center;
@@ -313,6 +315,11 @@ span{
 /* Show tooltip on hover */
 .feedback-link:hover::after {
     display: block;
+    color: #6197d1;
+}
+
+.feedback-link:hover{
+    color: #6a98c9;
 }
 
 .pic11 {
@@ -346,7 +353,7 @@ span{
     /* border: 0.5px solid black; */
     overflow: hidden; /* Ensures image does not overflow */
     gap:10px;
-    background-color:#476b93;
+    background-color:#b1b3b5;
 }
 
 .pic2-1{
@@ -396,7 +403,7 @@ span{
     /* border: 2px solid black;  */
     width: 830px;
     height: 600px;   
-    background-color:#476b93;
+    background-color:#b1b3b5;
 }
 
 .accordion {
@@ -404,7 +411,7 @@ span{
     display: flex;
     flex-direction: column;
     width: 830px;
-    background-color:#476b93;
+    background-color:#b1b3b5;
     color: white;
     font-family: Arial, sans-serif;
     gap:4px;
@@ -447,7 +454,7 @@ span{
     overflow: hidden;
     transition: max-height 0.3s ease;
     padding: 0 15px;
-    background-color: #333;
+    background-color: #b1b3b5;
 }
 
 .SS-container{

@@ -1,0 +1,24 @@
+
+//Vertical lines in bg
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 500px; /* Adjust position */
+    width: 2px; /* Line thickness */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 300px; /* Second line at 300px */
+    width: 2px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}

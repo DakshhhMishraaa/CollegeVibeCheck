@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/CollegeVibeCheck/css/register.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+    <div class="fullnavbar">
+        <div class="logobar">
+            <h1>Logo</h1>
+        </div>
+
+        <div class="navbar">
+            <a href="../php/index.php">Home</a>
+            <span>|</span>
+            <a href>Colleges</a>
+            <span>|</span>
+            <a href>Rankings</a>
+            <span>|</span>
+            <a href>Contact</a>
+        </div>
+
+        <div class="navbar2">
+            <a href="/php/login.php" class="sign-in-btn">
+                <h3 class="login-font">Login</h3>
+            </a>
+
+            <a href="/html/register.html" class="sign-in-btn">
+                <h3 class="login-font">Sign-Up</h3>
+            </a>
+        </div>
+    </div>
+    <div class="form-cont-cont">
+        <div class="form-container">
+            <form>
+                <div class="form-group">
+                    <div class="inner-form-group">
+                        <label for="first-name">Username <span class="required">*</span></label>
+                        <input type="text" id="first-name" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="inner-form-group">
+                        <label for="college">Select College </label>
+                        <select name="college">
+                            <option value="College1"></option>
+                            <option value="KJ">KJ Somaiya College of Engineering(Vidyavihar)</option>
+                            <option value="DJ">DJ Sanghavi College of Enginnering</option>
+                            <option value="NM">NMIMS College of Engineering</option>
+                            <option value="VJ">VJTI College of Engineering</option>
+                            <option value="KJSIT">KJ Somaiya Sion College of Engineering(Sion)</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <div class="inner-form-group">
+                        <label for="identitycard">Verify Identity </label>
+                        <input type="file" id="identitycard" name="identitycard" accept=".jpg, .jpeg" required>
+                    </div>
+                    <div class="inner-form-group">
+                        <label for="password">Password <span class="required">*</span></label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <div class="inner-form-group">
+                        <label for="email">Email Id <span class="required">*</span></label>
+                        <input type="email" id="email" placeholder="Enter Email Id" required>
+                    </div>
+                    <div class="inner-form-group">
+                        <label for="confirm-password">Confirm Password <span class="required">*</span></label>
+                        <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
+
+
