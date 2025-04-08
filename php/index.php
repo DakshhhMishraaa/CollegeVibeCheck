@@ -33,7 +33,7 @@
                 <h3 class="login-font">Login</h3>
             </a>
 
-            <a href="../html/register.html" class="sign-in-btn">
+            <a href="../php/register.php" class="sign-in-btn">
                 <h3 class="login-font">Sign-Up</h3>
             </a>
         </div>
@@ -129,8 +129,5 @@
 </html>
 
 <?php
-
-//Register page, and login page
-
 ?>
 

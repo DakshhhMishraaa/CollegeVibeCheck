@@ -1,6 +1,11 @@
 *{
     font-family: 'Tomorrow', sans-serif;
 }
+/*
+All color codes : 
+green : #345d32 (Buttons)
+gray : #b1b3b5 (bg)
+*/
 
 body{
     background-color:#b1b3b5;
@@ -418,7 +423,8 @@ span{
 }
 
 .accordion-item {
-    border-bottom: 1px solid #161414;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);    
+    /* border-bottom: 1px solid #161414; */
     border-radius: 5px;
     margin: 10px;
 }
@@ -435,7 +441,7 @@ span{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #7359d9;
+    background-color: #345d32;
     border-radius: 5px;
 }
 
@@ -454,7 +460,7 @@ span{
     overflow: hidden;
     transition: max-height 0.3s ease;
     padding: 0 15px;
-    background-color: #b1b3b5;
+    background-color: #414346;
 }
 
 .SS-container{

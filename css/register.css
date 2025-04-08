@@ -163,17 +163,23 @@ span{
     width: 1000px;
     gap: 20px;
     margin:10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .form-group {
-    display: flex; /* Use Flexbox instead of Grid */
-    flex-wrap: wrap; /* Allows wrapping if the screen is too small */
-    gap: 30px; /* Space between inputs */
-    align-items: center; /* Align inputs properly */
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-column-gap: 10px; /* Reduce column gap */
+    grid-row-gap: 10px; /* Keep row gap */
+    width: 100%;
     margin-bottom: 10px;
+    align-items: left; /* Align inputs properly */
+}
+
+.inner-form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: left;
 }
 
 label {
@@ -204,9 +210,9 @@ input::placeholder {
 }
 
 button {
-    width: 100%;
+    width: 100px;
     padding: 10px;
-    background: #ff5a5f;
+    background: #25690c;
     border: none;
     color: white;
     font-size: 16px;
@@ -215,13 +221,7 @@ button {
 }
 
 button:hover {
-    background: #e0484f;
-}
-
-.inner-form-group{
-    display: flex;
-    gap: 10px;
-    align-items: center; /* Align label and input */
+    background: #26b00b;
 }
 
 input, select {
@@ -229,3 +229,23 @@ input, select {
     min-width: 200px; /* Ensure inputs don't shrink too much */
 }
 
+#yr{
+    width: 40px; 
+    height: 40px; 
+    padding: 8px; 
+    font-size: 14px; 
+}
+
+#branch{
+    width: 200px; 
+    height: 40px; 
+    padding: 8px; 
+    font-size: 14px; 
+}
+
+#college{
+    width: 400px; 
+    height: 40px; 
+    padding: 8px; 
+    font-size: 14px; 
+}

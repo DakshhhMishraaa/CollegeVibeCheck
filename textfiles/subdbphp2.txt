@@ -1,0 +1,60 @@
+<?php
+session_start();
+include '../php/config.php'; //make sure this defines $conn properly
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
+    $email = $_POST['email'];
+    $college = $_POST['college'];
+    $branch = $_POST['branch'];
+    $year = $_POST['yearofstudy'];
+
+    // Check for duplicate username
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+    $stmt->bind_param("s", $user);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        $_SESSION['error'] = "Username already exists. Please choose another one.";
+        $_SESSION['old_username'] = $user;
+        header("Location: register.php");
+        
+        exit();
+    }
+
+    // Handle file upload
+    $targetDir = "../uploads/";
+    $fileName = basename($_FILES["identitycard"]["name"]);
+    $targetFilePath = $targetDir . uniqid() . "_" . $fileName;
+    $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+    $uploadOk = 1;
+    $allowedTypes = array("jpg", "jpeg", "png");
+
+    if (!in_array($fileType, $allowedTypes)) {
+        echo "Only JPG, JPEG & PNG files are allowed.";
+        $uploadOk = 0;
+    }
+
+    if ($uploadOk && move_uploaded_file($_FILES["identitycard"]["tmp_name"], $targetFilePath)) {
+        $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
+
+        $stmt = $conn->prepare("INSERT INTO users (username, password, email, college, branch, yearofstudy, identity)
+                                VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssss", $user, $hashedPassword, $email, $college, $branch, $year, $targetFilePath);
+
+        if ($stmt->execute()) {
+            header("Location: ../html/regsuccess.html");
+            exit();
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } else {
+        echo "File upload failed.";
+    }
+
+    $conn->close();
+}
+?>

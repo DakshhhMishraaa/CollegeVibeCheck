@@ -1,4 +1,3 @@
-<?php
 $servername = "localhost";
 $username = "root"; 
 $password = "";     
@@ -73,5 +72,4 @@ if ($uploadOk && move_uploaded_file($_FILES["identitycard"]["tmp_name"], $target
 }
 
 $conn->close();
-
 ?>
