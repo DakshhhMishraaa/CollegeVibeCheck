@@ -1,0 +1,158 @@
+*{
+    font-family: 'Tomorrow', sans-serif;
+    font-weight: 300;
+}
+
+body{
+    background-color:#b1b3b5;
+}
+/* background-color:#476b93; */
+
+/*Future bg-image*/
+.h{
+    background-image: url(../imgs/Collegenewbg.png);
+    background-size: cover; /* Covers the entire div */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; /* No tiling */
+}
+
+h1{
+    font-weight: 600;
+}
+
+body{
+    margin:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    width: 900px;
+    height: 600px;
+    display: flex;
+    border-radius: 10px;
+    background: white;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin:30px;
+}
+
+.welcome{
+    width: 400px;
+    height: 600px;
+    background-color: #26b00b;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+h2{
+    align-items: center;
+    margin: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.login-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    gap: 20px;
+    margin:10px;
+}
+
+.form-group {
+    display: flex; 
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: center; /* Align inputs properly */
+    gap:20px;
+}
+
+.inner-form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: left;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.required {
+    color: red;
+}
+
+input {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input::placeholder {
+    color: #bbb;
+}
+
+button {
+    width: 100px;
+    padding: 10px;
+    background: #25690c;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #26b00b;
+}
+
+.homebtn{
+    width: 100px;
+    padding: 10px;
+    background: #484a47;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.homebtn:hover{
+    background: #2b2c2b;
+}
+
+input, select {
+    flex-grow: 1; /* Allow inputs to expand equally */
+    min-width: 200px; /* Ensure inputs don't shrink too much */
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    padding-right: 40px; /* room for the eye */
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    user-select: none;
+}

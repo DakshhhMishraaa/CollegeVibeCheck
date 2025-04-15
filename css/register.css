@@ -249,3 +249,26 @@ input, select {
     padding: 8px; 
     font-size: 14px; 
 }
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    padding-right: 40px; /* room for the eye */
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.password-wrapper input[type="password"] {
+    width: 100px !important; /* force override */
+    padding-right: 35px;
+    box-sizing: border-box;
+}

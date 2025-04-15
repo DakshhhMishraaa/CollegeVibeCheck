@@ -1,0 +1,8 @@
+            <div class="navbar2">
+                <a href="../php/login.php" class="sign-in-btn">
+                    <h3 class="login-font">Login</h3>
+                </a>
+                <a href="#" class="sign-in-btn" onclick="toggle()">
+                    <h3 class="login-font">Sign-Up</h3>
+                </a>
+            </div>

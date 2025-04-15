@@ -3,6 +3,8 @@
       echo "<script>alert('" . $_SESSION['error'] . "');</script>";
       unset($_SESSION['error']);
   }
+
+  include 'nav.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,33 +19,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Awesome Font being used -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body>
-    <div class="fullnavbar">
-        <div class="logobar">
-            <h1>Logo</h1>
-        </div>
-
-        <div class="navbar">
-            <a href="../php/index.php">Home</a>
-            <span>|</span>
-            <a href>Colleges</a>
-            <span>|</span>
-            <a href>Rankings</a>
-            <span>|</span>
-            <a href>Contact</a>
-        </div>
-
-        <div class="navbar2">
-            <a href="/php/login.php" class="sign-in-btn">
-                <h3 class="login-font">Login</h3>
-            </a>
-
-            <a href="/html/register.php" class="sign-in-btn">
-                <h3 class="login-font">Sign-Up</h3>
-            </a>
-        </div>
-    </div>
     <div class="form-cont-cont">
         <div class="form-container">
             <form action="register.php"  method="POST" enctype="multipart/form-data">
@@ -52,6 +33,9 @@
                         <label for="first-name">Username <span class="required">*</span></label>
                         <input type="text" id="first-name" placeholder="Enter First Name" required name="username">
                     </div>
+                    <!-- Secretly Assigning a role to this user as 'student' -->
+                    <input type="hidden" name="role" value="student">
+
                     <div class="inner-form-group">
                         <label for="college">Select College </label>
                         <select name="college" id="college">
@@ -90,7 +74,10 @@
                     </div>
                     <div class="inner-form-group">
                         <label for="password">Password <span class="required">*</span></label>
-                        <input type="password" id="password" placeholder="Enter your password" name="password" value="<?php echo $_SESSION['old_username'] ?? ''; ?>" required>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" placeholder="Enter your password" name="password" value="<?php echo $_SESSION['old_username'] ?? ''; ?>" required>
+                            <span id="togglePassword" class="fa fa-eye eye-icon"></span>
+                        </div>
                     </div>
                     <div class="inner-form-group">
                         <label for="email">Email Id <span class="required">*</span></label>
@@ -98,10 +85,13 @@
                     </div>
                     <div class="inner-form-group">
                         <label for="confirm-password">Confirm Password <span class="required">*</span></label>
-                        <input type="password" id="confirm-password" placeholder="Confirm your password" name = "confirm-password" required>
+                        <div class="password-wrapper">
+                            <input type="password" id="confirm-password" placeholder="Confirm your password" name = "confirm-password" required>
+                            <span id="togglePassword" class="fa fa-eye eye-icon"></span>
+                        </div>
                     </div>
                     <div class="inner-form-group">
-                        <button type="submit">Submit</button>
+                        <button type="submit">Sign-up</button>
                     </div>
                 </div>    
             </form>
@@ -124,6 +114,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $college = $_POST['college'];
     $branch = $_POST['branch'];
     $year = $_POST['yearofstudy'];
+    $role = $_POST['role'];
     $exists = false;
     if ($pass !== $cpass) {
         echo "<script>
@@ -157,7 +148,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $allowedTypes = array("jpg", "jpeg", "png");
 
     if (!in_array($fileType, $allowedTypes)) {
-        echo "Only JPG, JPEG & PNG files are allowed.";
+        echo "<script>
+            alert('file type not matched (jpg, jpeg, png)');
+            window.history.back();
+        </script>";
+        exit();
         $uploadOk = 0;
     }
     if ($uploadOk && move_uploaded_file($_FILES["identitycard"]["tmp_name"], $targetFilePath)) {
@@ -165,13 +160,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
 
         //Insert into DB
-        $stmt = $conn->prepare("INSERT INTO users (username, password, email, college, branch, yearofstudy, identity)
-                                VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssss", $user, $hashedPassword, $email, $college, $branch, $year, $targetFilePath);
+        $stmt = $conn->prepare("INSERT INTO users (username, password, email, college, branch, yearofstudy, identity, user_role)
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssssss", $user, $hashedPassword, $email, $college, $branch, $year, $targetFilePath, $role);
 
         if ($stmt->execute()) {
-            header("Location: ../html/regsuccess.html");
-            exit();
+            echo "<script>
+                    window.location.href = 'regsuccess.php';
+                </script>";
         } else {
             echo "Error: " . $stmt->error;
         }
