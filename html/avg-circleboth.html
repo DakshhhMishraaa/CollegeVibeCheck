@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Rating with Average Circle</title>
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      padding: 50px;
+    }
+
+    .rating-boxes {
+      display: flex;
+      gap: 3px;
+    }
+
+    .rating-container, .subrating {
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: #ccc;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .box.hovered.poor, .box.selected.poor {
+      background-color: #ff4d4f;
+    }
+    .box.hovered.average, .box.selected.average {
+      background-color: #ff944d;
+    }
+    .box.hovered.good, .box.selected.good {
+      background-color: #ffc107;
+    }
+    .box.hovered.great, .box.selected.great {
+      background-color: #69d100;
+    }
+    .box.hovered.excellent, .box.selected.excellent {
+      background-color: #28a745;
+    }
+
+    .rating-text {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #444;
+      height: 30px;
+    }
+
+    .ds {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .ds-row {
+      display: flex;
+      gap: 100px;
+    }
+
+    /* Circle rating */
+    .circle-rating {
+      --rating: 0;
+      --size: 150px;
+      --thickness: 15px;
+      --percent: 0;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      background:
+        conic-gradient(
+          var(--color) 0 calc(var(--percent) * 1%),
+          #ddd calc(var(--percent) * 1%) 100%
+        );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .circle-rating::before {
+      content: '';
+      position: absolute;
+      width: calc(var(--size) - var(--thickness) * 2);
+      height: calc(var(--size) - var(--thickness) * 2);
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .circle-rating .rating-text {
+      position: relative;
+      font-size: 40px;
+      font-weight: bold;
+      color: #333;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Average Circle Display -->
+  <div id="rating" class="circle-rating">
+    <div class="rating-text" id="ratingText">0/5</div>
+  </div>
+  <div>
+    <h2>Tuition Quality</h2>
+  </div>
+
+  <!-- Tuition Quality -->
+  <div class="ds">
+    <div class="ds-row">
+      <div class="rating-container">
+        <div class="subrating"><h3>S1</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+
+      <div class="rating-container">
+        <div class="subrating"><h3>S2</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-row">
+      <div class="rating-container">
+        <div class="subrating"><h3>S5</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+
+      <div class="rating-container">
+        <div class="subrating"><h3>S6</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="ds-row">
+        <div class="rating-container">
+          <div class="subrating"><h3>S5</h3></div>
+          <div class="sub-ratingbox">
+            <div class="rating-boxes">
+              <div class="box" data-index="1"></div>
+              <div class="box" data-index="2"></div>
+              <div class="box" data-index="3"></div>
+              <div class="box" data-index="4"></div>
+              <div class="box" data-index="5"></div>
+            </div>
+            <div class="rating-text">&nbsp;</div>
+          </div>
+        </div>
+  
+        <div class="rating-container">
+          <div class="subrating"><h3>S6</h3></div>
+          <div class="sub-ratingbox">
+            <div class="rating-boxes">
+              <div class="box" data-index="1"></div>
+              <div class="box" data-index="2"></div>
+              <div class="box" data-index="3"></div>
+              <div class="box" data-index="4"></div>
+              <div class="box" data-index="5"></div>
+            </div>
+            <div class="rating-text">&nbsp;</div>
+          </div>
+        </div>
+        
+    </div>
+  </div>
+
+  <div id="rating" class="circle-rating">
+    <div class="rating-text" id="ratingText">0/5</div>
+  </div>
+  <div>
+    <h2>Attendance Culture</h2>
+  </div>
+
+  <!--Attendance Culture -->
+  <div class="ds">
+    <div class="ds-row">
+      <div class="rating-container">
+        <div class="subrating"><h3>T1</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+
+      <div class="rating-container">
+        <div class="subrating"><h3>T2</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-row">
+      <div class="rating-container">
+        <div class="subrating"><h3>T5</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+
+      <div class="rating-container">
+        <div class="subrating"><h3>T6</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="ds-row">
+        <div class="rating-container">
+          <div class="subrating"><h3>S5</h3></div>
+          <div class="sub-ratingbox">
+            <div class="rating-boxes">
+              <div class="box" data-index="1"></div>
+              <div class="box" data-index="2"></div>
+              <div class="box" data-index="3"></div>
+              <div class="box" data-index="4"></div>
+              <div class="box" data-index="5"></div>
+            </div>
+            <div class="rating-text">&nbsp;</div>
+          </div>
+        </div>
+  
+        <div class="rating-container">
+          <div class="subrating"><h3>S6</h3></div>
+          <div class="sub-ratingbox">
+            <div class="rating-boxes">
+              <div class="box" data-index="1"></div>
+              <div class="box" data-index="2"></div>
+              <div class="box" data-index="3"></div>
+              <div class="box" data-index="4"></div>
+              <div class="box" data-index="5"></div>
+            </div>
+            <div class="rating-text">&nbsp;</div>
+          </div>
+        </div>
+        
+    </div>
+  </div>
+
+  <script>
+    const allRatingSections = document.querySelectorAll('.rating-container');
+    const ratingClasses = ['poor', 'average', 'good', 'great', 'excellent'];
+    const ratingLabels = ['Poor', 'Average', 'Good', 'Great', 'Excellent'];
+    const selectedRatings = [];
+
+    allRatingSections.forEach((section, sectionIndex) => {
+      const boxes = section.querySelectorAll('.box');
+      const ratingText = section.querySelector('.rating-text');
+      let selectedRating = 0;
+      selectedRatings[sectionIndex] = 0;
+
+      boxes.forEach((box, index) => {
+        box.addEventListener('mouseenter', () => {
+          updateBoxes(index + 1, 'hovered');
+          ratingText.textContent = ratingLabels[index];
+        });
+
+        box.addEventListener('mouseleave', () => {
+          updateBoxes(selectedRating, 'selected');
+          ratingText.textContent = selectedRating ? ratingLabels[selectedRating - 1] : '\u00A0';
+        });
+
+        box.addEventListener('click', () => {
+          selectedRating = index + 1;
+          selectedRatings[sectionIndex] = selectedRating;
+          updateBoxes(selectedRating, 'selected');
+          ratingText.textContent = ratingLabels[index];
+          updateAverageRating();
+        });
+      });
+
+      function updateBoxes(level, type) {
+        boxes.forEach((box, i) => {
+          box.className = 'box';
+          if (i < level) {
+            box.classList.add(type);
+            box.classList.add(ratingClasses[level - 1]);
+          }
+        });
+      }
+    });
+
+    function updateAverageRating() {
+      const validRatings = selectedRatings.filter(r => r > 0);
+      const average = validRatings.length > 0 ?
+                      (validRatings.reduce((a, b) => a + b, 0) / validRatings.length).toFixed(1) : 0;
+      setCircularRating('rating', average);
+    }
+
+    function setCircularRating(elementId, rating) {
+      const el = document.getElementById(elementId);
+      const textEl = el.querySelector('.rating-text');
+      const colorMap = [
+        { max: 1, color: '#ff4d4f' },       // Poor
+        { max: 2, color: '#ff944d' },       // Average
+        { max: 3, color: '#ffc107' },       // Good
+        { max: 4, color: '#69d100' },       // Great
+        { max: 5, color: '#28a745' }        // Excellent
+      ];
+      const percent = (rating / 5) * 100;
+      const { color } = colorMap.find(entry => rating <= entry.max) || colorMap[4];
+      el.style.setProperty('--rating', rating);
+      el.style.setProperty('--percent', percent);
+      el.style.setProperty('--color', color);
+      textEl.textContent = `${rating}/5`;
+    }
+  </script>
+
+</body>
+</html>

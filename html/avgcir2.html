@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Rating with Average Circle</title>
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      padding: 50px;
+    }
+
+    .rating-boxes {
+      display: flex;
+      gap: 3px;
+    }
+
+    .rating-container, .subrating {
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: #ccc;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .box.hovered.poor, .box.selected.poor { background-color: #ff4d4f; }
+    .box.hovered.average, .box.selected.average { background-color: #ff944d; }
+    .box.hovered.good, .box.selected.good { background-color: #ffc107; }
+    .box.hovered.great, .box.selected.great { background-color: #69d100; }
+    .box.hovered.excellent, .box.selected.excellent { background-color: #28a745; }
+
+    .rating-text {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #444;
+      height: 30px;
+    }
+
+    .ds { display: flex; flex-direction: column; gap: 20px; }
+    .ds-row { display: flex; gap: 100px; }
+
+    .circle-rating {
+      --rating: 0;
+      --size: 150px;
+      --thickness: 15px;
+      --percent: 0;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--color) 0 calc(var(--percent) * 1%),
+        #ddd calc(var(--percent) * 1%) 100%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .circle-rating::before {
+      content: '';
+      position: absolute;
+      width: calc(var(--size) - var(--thickness) * 2);
+      height: calc(var(--size) - var(--thickness) * 2);
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .circle-rating .rating-text {
+      position: relative;
+      font-size: 40px;
+      font-weight: bold;
+      color: #333;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tuition Quality Section -->
+  <div>
+    <h2>Tuition Quality</h2>
+    <div id="tuitionRating" class="circle-rating">
+      <div class="rating-text" id="tuitionRatingText">0/5</div>
+    </div>
+  </div>
+  <div id="tuitionSection" class="ds">
+    <div class="ds-row">
+      <div class="rating-container">
+        <div class="subrating"><h3>S1</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+      <div class="rating-container">
+        <div class="subrating"><h3>S2</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+    <div class="ds-row">
+      <div class="rating-container">
+        <div class="subrating"><h3>S5</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+      <div class="rating-container">
+        <div class="subrating"><h3>S6</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Attendance Culture Section -->
+  <div>
+    <h2>Attendance Culture</h2>
+    <div id="attendanceRating" class="circle-rating">
+      <div class="rating-text" id="attendanceRatingText">0/5</div>
+    </div>
+  </div>
+  <div id="attendanceSection" class="ds">
+    <div class="ds-row">
+      <div class="rating-container">
+        <div class="subrating"><h3>T1</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+      <div class="rating-container">
+        <div class="subrating"><h3>T2</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+    <div class="ds-row">
+      <div class="rating-container">
+        <div class="subrating"><h3>T5</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+      <div class="rating-container">
+        <div class="subrating"><h3>T6</h3></div>
+        <div class="sub-ratingbox">
+          <div class="rating-boxes">
+            <div class="box" data-index="1"></div>
+            <div class="box" data-index="2"></div>
+            <div class="box" data-index="3"></div>
+            <div class="box" data-index="4"></div>
+            <div class="box" data-index="5"></div>
+          </div>
+          <div class="rating-text">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Overall Average</h2>
+    <div id="overallRating" class="circle-rating">
+      <div class="rating-text" id="overallRatingText">0/5</div>
+    </div>
+  </div>
+
+  <script>
+    const ratingClasses = ['poor','average','good','great','excellent'];
+    const ratingLabels = ['Poor','Average','Good','Great','Excellent'];
+    const colorMap = [
+      { max: 1, color: '#ff4d4f' },
+      { max: 2, color: '#ff944d' },
+      { max: 3, color: '#ffc107' },
+      { max: 4, color: '#69d100' },
+      { max: 5, color: '#28a745' }
+    ];
+  
+    function setCircularRating(circleId, rating) {
+      const el = document.getElementById(circleId);
+      const textEl = el.querySelector('.rating-text');
+      const percent = (rating / 5) * 100;
+      const { color } = colorMap.find(e => rating <= e.max) || colorMap[4];
+      el.style.setProperty('--percent', percent);
+      el.style.setProperty('--color', color);
+      textEl.textContent = `${rating}/5`;
+    }
+  
+    // 1) Define the overall‐average updater:
+    function updateOverall() {
+      const t = parseFloat(document.getElementById('tuitionRatingText').textContent) || 0;
+      const a = parseFloat(document.getElementById('attendanceRatingText').textContent) || 0;
+      const vals = [t, a].filter(v => v > 0);
+      const avg = vals.length
+        ? (vals.reduce((sum, v) => sum + v, 0) / vals.length).toFixed(1)
+        : 0;
+      setCircularRating('overallRating', avg);
+    }
+  
+    function initRating(sectionId, circleId) {
+      const section = document.getElementById(sectionId);
+      const containers = section.querySelectorAll('.rating-container');
+      const selected = Array(containers.length).fill(0);
+  
+      containers.forEach((container, idx) => {
+        const boxes = container.querySelectorAll('.box');
+        const text = container.querySelector('.rating-text');
+        let sel = 0;
+  
+        boxes.forEach((box, i) => {
+          box.addEventListener('mouseenter', () => {
+            updateBoxes(i + 1, 'hovered');
+            text.textContent = ratingLabels[i];
+          });
+          box.addEventListener('mouseleave', () => {
+            updateBoxes(sel, 'selected');
+            text.textContent = sel ? ratingLabels[sel - 1] : '\u00A0';
+          });
+          box.addEventListener('click', () => {
+            sel = i + 1;
+            selected[idx] = sel;
+            updateBoxes(sel, 'selected');
+            text.textContent = ratingLabels[i];
+            const valid = selected.filter(v => v > 0);
+            const avg = valid.length
+              ? (valid.reduce((a, b) => a + b, 0) / valid.length).toFixed(1)
+              : 0;
+            setCircularRating(circleId, avg);
+  
+            // 2) Call overall‐average updater:
+            updateOverall();
+          });
+        });
+  
+        function updateBoxes(level, type) {
+          boxes.forEach((b, j) => {
+            b.className = 'box';
+            if (j < level) b.classList.add(type, ratingClasses[level - 1]);
+          });
+        }
+      });
+    }
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      initRating('tuitionSection', 'tuitionRating');
+      initRating('attendanceSection', 'attendanceRating');
+  
+      // 3) Seed overall on load:
+      updateOverall();
+    });
+  </script>
+  
+</body>
+</html>

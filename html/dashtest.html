@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserDashboard</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/dashprac.css">
+</head>
+
+<body>
+    <div class="wrapper">
+      <div class="sidebar-wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="lni lni-grid-alt"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="#">CollegeVibeCheck</a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+               <!-- Academics ------------>
+                <li class="sidebar-item">
+                  <a href="#acad" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                      data-bs-target="#academics" aria-expanded="false" aria-controls="academics">
+                      <i class="lni lni-graduation"></i>
+                      <span>Academics</span>
+                  </a>
+                  <ul id="academics" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                      <li class="sidebar-item">
+                          <a href="#acad" class="sidebar-link">Tuition Quality</a>
+                      </li>
+                      <li class="sidebar-item">
+                          <a href="#acad" class="sidebar-link">Attendance</a>
+                      </li>
+                      <li class="sidebar-item">
+                        <a href="#acad" class="sidebar-link">Assignment Culture</a>
+                      </li>
+                      <li class="sidebar-item">
+                        <a href="#acad" class="sidebar-link">Exam System</a>
+                      </li>
+                  </ul>
+                </li>
+
+                <!-- Amenities -->
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                      data-bs-target="#amenities" aria-expanded="false" aria-controls="amenities">
+                      <i class="lni lni-apartment"></i>
+                      <span>Amenities</span>
+                  </a>
+                  <ul id="amenities" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                      <li class="sidebar-item">
+                          <a href="#" class="sidebar-link">Canteen Food</a>
+                      </li>
+                      <li class="sidebar-item">
+                          <a href="#" class="sidebar-link">Mess Food</a>
+                      </li>
+                      <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Campus Infra</a>
+                      </li>
+                      <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Hostel Infra</a>
+                      </li>
+                  </ul>
+                </li>
+
+
+              <!--Social Life ----------------->
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                  <i class="lni lni-users"></i>
+                    <span>Social Life</span>
+                </a>
+              </li>
+
+              <!--Committees ----------------->
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                  <i class="lni lni-network"></i>
+                    <span>Committees</span>
+                </a>
+              </li>
+
+              <!--Opportunities ----------------->
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                  <i class="lni lni-rocket"></i>
+                    <span>Opporunities</span>
+                </a>
+              </li>
+
+              <!---Fests-->
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                  <i class="lni lni-music"></i>
+                    <span>Fests</span>
+                </a>
+            </li>
+                
+              <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">
+                      <i class="lni lni-popup"></i>
+                      <span>Sample</span>
+                  </a>
+              </li>
+                
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+      </div>
+
+        <div class="main"><!--Includes nav and main-content-->
+          <nav class="navbar navbar-expand px-4 py-3">
+            <div class="container-fluid w-100 d-flex justify-content-between align-items-center">
+              
+              <!-- Left: Welcome Text -->
+              <div class="navbar-welcome text-start fw-semibold">
+                👋 Welcome, User!
+              </div>
+          
+              <!-- Right: Profile -->
+              <div class="navbar-collapse collapse justify-content-end">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item dropdown">
+                    <span class="me-2 fw-semibold text-dark">Balben</span>
+                    <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                      <img src="../imgs/blank.png" class="avatar img-fluid" alt="">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end rounded">
+                      <a class="dropdown-item" href="">
+                        🔑 Change Password
+                      </a>
+                      <a class="dropdown-item" href="">
+                        🖼️ Change Profile Picture
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          
+            <div class="main-content">
+                <!-- Rating Systems -->
+                <div class="rating system">
+
+                    <!-- Academics-->
+                    <div class="dashboard-section">
+                      <!--Just Above ds(subrating box)-->
+                      <div class="ds-top">
+                        <!--Left: ds-heading + description-->
+                        <div class="ds-col">
+                          <div class="ds-heading" id="acad">
+                            <h1 class="ds-title">Academics</h1>
+                          </div>
+                          <div class="ds-description">
+                            <p class="ds-descrip-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi dolor minima voluptas dignissimos animi expedita non neque. Eius reprehenderit obcaecati eveniet quaerat distinctio! Reprehenderit ea possimus enim minus similique, eveniet quis placeat eligendi deserunt veritatis cum delectus, laudantium cumque sunt tempore molestiae a assumenda. Nemo ducimus quis est natus! Magnam voluptatum at consectetur cupiditate rem quaerat, distinctio tenetur commodi nam iure est ab in provident incidunt, vel rerum suscipit repellat voluptatem ea velit esse. Adipisci impedit suscipit quis accusamus unde nihil rem voluptatibus tenetur sed quos ipsa beatae deserunt vel autem architecto ab, voluptate dolore dolores eaque asperiores quibusdam! Omnis.</p>
+                          </div>
+                        </div>
+                        <!----Right: Avg-Rating Display-->
+                        <div class="ds-avg-rat-display">
+                          <div class="rating-cricle">
+                            <h1>Rating Circle</h1>
+                          </div>
+                          <div class="overall-text"></div>
+                          <div class="parameter-list">
+                            <div class="parlist">
+                              <div class="rate-calc">
+                                <h4>R1</h4>
+                              </div>
+                              <div class="rate-graphic-display">
+                                <h4>Tuition Quality</h4>
+                              </div>
+                            </div>
+                            <div class="parlist">
+                              <div class="rate-calc">
+                                <h4>R1</h4>
+                              </div>
+                              <div class="rate-graphic-display">
+                                <h4>Attendance Culture</h4>
+                              </div>
+                            </div>
+                            <div class="parlist">
+                              <div class="rate-calc">
+                                <h4>R1</h4>
+                              </div>
+                              <div class="rate-graphic-display">
+                                <h4>Assignment Culture</h4>
+                              </div>
+                            </div>
+                            <div class="parlist">
+                              <div class="rate-calc">
+                                <h4>R1</h4>
+                              </div>
+                              <div class="rate-graphic-display">
+                                <h4>Exam System</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>        
+                      </div>
+
+                      <!--1.1)Tuition Quality: 1.1.1, 1.1.2, 1.1.3, 1.1.4, 1.1.5, 1.1.6-->
+                      <div class="ds">
+                        <!--Tuition Quality-->
+                        <div class="subrating-heading">
+                          <h2 class="sb-rate-h">Tuition Quality</h2>
+                        </div>
+                        <!--1.1.1, 1.1.2--->
+                        <div class="ds-row">
+                          <!--1.1.1-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Core-Subs</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                          <!--1.1.2-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Non-Core Subs</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                        </div>
+                        <!--1.1.3, 1.1.4--->
+                        <div class="ds-row">
+                          <!--1.1.3-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Online Learning Portals</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                          <!--1.1.4-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Smart Boards/ Projector</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                        </div>
+                        <!--1.1.5, 1.1.6--->
+                        <div class="ds-row">
+                          <!--1.1.5-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Access to Licensed Software</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                          <!--1.1.6-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Provision of Notes</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                        </div>
+                
+                        <!--Comment-box-->
+                        <div class="comment-container">
+                          <div class="user-comment">
+                            <h2>Comments</h2>
+                          </div>  
+                          <form id="commentForm" method="POST" action="save_comment.php">
+                            <textarea id="commentInput" name="comment" maxlength="250" placeholder="Type your thoughts..." required></textarea>
+                            <div class="footer">
+                              <span id="charCount">0/250</span>
+                              <button type="submit" id="submitBtn" disabled>Post</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <!--1.2)Attendance Culture: 1.2.1, 1.2.2, 1.2.3, 1.2.4-->
+                      <div class="ds">
+                        <!--Attendance Culture-->
+                        <div class="subrating-heading">
+                          <h2 class="sb-rate-h">Attendance Culture</h2>
+                        </div>
+                        <!--1.2.1, 1.2.2--->
+                        <div class="ds-row">
+                          <!--1.2.1-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Lenience in 75% criteria</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                          <!--1.1.2-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Concessions through clubs</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                        </div>
+                        <!--1.2.3, 1.2.4--->
+                        <div class="ds-row">
+                          <!--1.2.3-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Leniene in lecture</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                          <!--1.2.4-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Medical Leave Considerations</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                        </div>
+                
+                        <!--Comment-box-->
+                        <div class="comment-container">
+                          <div class="user-comment">
+                            <h2>Comments</h2>
+                          </div>  
+                          <form id="commentForm" method="POST" action="save_comment.php">
+                            <textarea id="commentInput" name="comment" maxlength="250" placeholder="Type your thoughts..." required></textarea>
+                            <div class="footer">
+                              <span id="charCount">0/250</span>
+                              <button type="submit" id="submitBtn" disabled>Post</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <!--1.3)Exam System: 1.3.1, 1.3.2, 1.3.3, 1.3.4-->
+                      <div class="ds">
+                        <!--Exam System-->
+                        <div class="subrating-heading">
+                          <h2 class="sb-rate-h">Exam System</h2>
+                        </div>
+                        <!--1.3.1, 1.3.2--->
+                        <div class="ds-row">
+                          <!--1.3.1-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Exam difficulty</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                          <!--1.3.2-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Fairness in checking</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                        </div>
+                        <!--1.3.3, 1.3.4--->
+                        <div class="ds-row">
+                          <!--1.3.3-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Exam Prep Time</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                          <!--1.3.4-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Relevance to Syllabus taught</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                        </div>
+                
+                        <!--Comment-box-->
+                        <div class="comment-container">
+                          <div class="user-comment">
+                            <h2>Comments</h2>
+                          </div>  
+                          <form id="commentForm" method="POST" action="save_comment.php">
+                            <textarea id="commentInput" name="comment" maxlength="250" placeholder="Type your thoughts..." required></textarea>
+                            <div class="footer">
+                              <span id="charCount">0/250</span>
+                              <button type="submit" id="submitBtn" disabled>Post</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <!--1.4)Assignment Culture: 1.4.1, 1.4.2, 1.4.3, 1.4.4-->
+                      <div class="ds">
+                        <!--Assignment Culture-->
+                        <div class="subrating-heading">
+                          <h2 class="sb-rate-h">Exam System</h2>
+                        </div>
+                        <!--1.4.1, 1.4.2--->
+                        <div class="ds-row">
+                          <!--1.3.1-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Deadline Flexibility</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                          <!--1.4.2-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Digital Adoption</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                        </div>
+                        <!--1.4.3, 1.4.4--->
+                        <div class="ds-row">
+                          <!--1.4.3-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Plagiarism handling</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                          <!--1.4.4-->
+                          <div class="rating-container">
+                            <div class="sub-sub-rating-h">
+                              <h3>Relevance to Subject</h3>
+                            </div>
+                            <!--rating-boxes-->
+                            <div class="sub-ratingbox">
+                              <div class="rating-boxes">
+                                <div class="box" data-index="1"></div>
+                                <div class="box" data-index="2"></div>
+                                <div class="box" data-index="3"></div>
+                                <div class="box" data-index="4"></div>
+                                <div class="box" data-index="5"></div>
+                              </div>
+                              <div class="rating-text">&nbsp;</div>
+                            </div>
+                            <!--Rating Description-->
+                            <div class="rating-description">
+                              <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                            </div>
+                          </div> 
+                        </div>
+                
+                        <!--Comment-box-->
+                        <div class="comment-container">
+                          <div class="user-comment">
+                            <h2>Comments</h2>
+                          </div>  
+                          <form id="commentForm" method="POST" action="save_comment.php">
+                            <textarea id="commentInput" name="comment" maxlength="250" placeholder="Type your thoughts..." required></textarea>
+                            <div class="footer">
+                              <span id="charCount">0/250</span>
+                              <button type="submit" id="submitBtn" disabled>Post</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <!-- Amenities -->
+                    <div class="dashboard-section">
+                        <!--Just Above ds(subrating box)-->
+                        <div class="ds-top">
+                          <!--Left: ds-heading + description-->
+                          <div class="ds-col">
+                            <div class="ds-heading" id="acad">
+                              <h1 class="ds-title">Amenities</h1>
+                            </div>
+                            <div class="ds-description">
+                              <p class="ds-descrip-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi dolor minima voluptas dignissimos animi expedita non neque. Eius reprehenderit obcaecati eveniet quaerat distinctio! Reprehenderit ea possimus enim minus similique, eveniet quis placeat eligendi deserunt veritatis cum delectus, laudantium cumque sunt tempore molestiae a assumenda. Nemo ducimus quis est natus! Magnam voluptatum at consectetur cupiditate rem quaerat, distinctio tenetur commodi nam iure est ab in provident incidunt, vel rerum suscipit repellat voluptatem ea velit esse. Adipisci impedit suscipit quis accusamus unde nihil rem voluptatibus tenetur sed quos ipsa beatae deserunt vel autem architecto ab, voluptate dolore dolores eaque asperiores quibusdam! Omnis.</p>
+                            </div>
+                          </div>
+                          <!----Right: Avg-Rating Display-->
+                          <div class="ds-avg-rat-display">
+                            <div class="rating-cricle">
+                              <h1>Rating Circle</h1>
+                            </div>
+                            <div class="overall-text"></div>
+                            <div class="parameter-list">
+                              <div class="parlist">
+                                <div class="rate-calc">
+                                  <h4>R1</h4>
+                                </div>
+                                <div class="rate-graphic-display">
+                                  <h4>Tuition Quality</h4>
+                                </div>
+                              </div>
+                              <div class="parlist">
+                                <div class="rate-calc">
+                                  <h4>R1</h4>
+                                </div>
+                                <div class="rate-graphic-display">
+                                  <h4>Attendance Culture</h4>
+                                </div>
+                              </div>
+                              <div class="parlist">
+                                <div class="rate-calc">
+                                  <h4>R1</h4>
+                                </div>
+                                <div class="rate-graphic-display">
+                                  <h4>Assignment Culture</h4>
+                                </div>
+                              </div>
+                              <div class="parlist">
+                                <div class="rate-calc">
+                                  <h4>R1</h4>
+                                </div>
+                                <div class="rate-graphic-display">
+                                  <h4>Exam System</h4>
+                                </div>
+                              </div>
+                            </div>
+                          </div>        
+                        </div>
+                        
+                        <!--2.2.1, 2.2.2, 2.2.3, 2.2.4-->
+                        <div class="ds">
+                          <!--Amenitiies-->
+                          <div class="subrating-heading">
+                            <h2 class="sb-rate-h">Canteen Food</h2>
+                          </div>
+                          <!--2.2.1, 2.2.2--->
+                          <div class="ds-row">
+                            <!--1.2.1-->
+                            <div class="rating-container">
+                              <div class="sub-sub-rating-h">
+                                <h3>Quality</h3>
+                              </div>
+                              <!--rating-boxes-->
+                              <div class="sub-ratingbox">
+                                <div class="rating-boxes">
+                                  <div class="box" data-index="1"></div>
+                                  <div class="box" data-index="2"></div>
+                                  <div class="box" data-index="3"></div>
+                                  <div class="box" data-index="4"></div>
+                                  <div class="box" data-index="5"></div>
+                                </div>
+                                <div class="rating-text">&nbsp;</div>
+                              </div>
+                              <!--Rating Description-->
+                              <div class="rating-description">
+                                <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                              </div>
+                            </div> 
+                            <!--1.2.2-->
+                            <div class="rating-container">
+                              <div class="sub-sub-rating-h">
+                                <h3>Taste</h3>
+                              </div>
+                              <!--rating-boxes-->
+                              <div class="sub-ratingbox">
+                                <div class="rating-boxes">
+                                  <div class="box" data-index="1"></div>
+                                  <div class="box" data-index="2"></div>
+                                  <div class="box" data-index="3"></div>
+                                  <div class="box" data-index="4"></div>
+                                  <div class="box" data-index="5"></div>
+                                </div>
+                                <div class="rating-text">&nbsp;</div>
+                              </div>
+                              <!--Rating Description-->
+                              <div class="rating-description">
+                                <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                              </div>
+                            </div> 
+                          </div>
+                          <!--1.2.3, 1.2.4--->
+                          <div class="ds-row">
+                            <!--1.1.3-->
+                            <div class="rating-container">
+                              <div class="sub-sub-rating-h">
+                                <h3>Online Learning Portals</h3>
+                              </div>
+                              <!--rating-boxes-->
+                              <div class="sub-ratingbox">
+                                <div class="rating-boxes">
+                                  <div class="box" data-index="1"></div>
+                                  <div class="box" data-index="2"></div>
+                                  <div class="box" data-index="3"></div>
+                                  <div class="box" data-index="4"></div>
+                                  <div class="box" data-index="5"></div>
+                                </div>
+                                <div class="rating-text">&nbsp;</div>
+                              </div>
+                              <!--Rating Description-->
+                              <div class="rating-description">
+                                <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                              </div>
+                            </div> 
+                            <!--1.1.4-->
+                            <div class="rating-container">
+                              <div class="sub-sub-rating-h">
+                                <h3>Smart Boards/ Projector</h3>
+                              </div>
+                              <!--rating-boxes-->
+                              <div class="sub-ratingbox">
+                                <div class="rating-boxes">
+                                  <div class="box" data-index="1"></div>
+                                  <div class="box" data-index="2"></div>
+                                  <div class="box" data-index="3"></div>
+                                  <div class="box" data-index="4"></div>
+                                  <div class="box" data-index="5"></div>
+                                </div>
+                                <div class="rating-text">&nbsp;</div>
+                              </div>
+                              <!--Rating Description-->
+                              <div class="rating-description">
+                                <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                              </div>
+                            </div> 
+                          </div>
+                          <!--1.1.5, 1.1.6--->
+                          <div class="ds-row">
+                            <!--1.1.5-->
+                            <div class="rating-container">
+                              <div class="sub-sub-rating-h">
+                                <h3>Access to Licensed Software</h3>
+                              </div>
+                              <!--rating-boxes-->
+                              <div class="sub-ratingbox">
+                                <div class="rating-boxes">
+                                  <div class="box" data-index="1"></div>
+                                  <div class="box" data-index="2"></div>
+                                  <div class="box" data-index="3"></div>
+                                  <div class="box" data-index="4"></div>
+                                  <div class="box" data-index="5"></div>
+                                </div>
+                                <div class="rating-text">&nbsp;</div>
+                              </div>
+                              <!--Rating Description-->
+                              <div class="rating-description">
+                                <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                              </div>
+                            </div> 
+                            <!--1.1.6-->
+                            <div class="rating-container">
+                              <div class="sub-sub-rating-h">
+                                <h3>Provision of Notes</h3>
+                              </div>
+                              <!--rating-boxes-->
+                              <div class="sub-ratingbox">
+                                <div class="rating-boxes">
+                                  <div class="box" data-index="1"></div>
+                                  <div class="box" data-index="2"></div>
+                                  <div class="box" data-index="3"></div>
+                                  <div class="box" data-index="4"></div>
+                                  <div class="box" data-index="5"></div>
+                                </div>
+                                <div class="rating-text">&nbsp;</div>
+                              </div>
+                              <!--Rating Description-->
+                              <div class="rating-description">
+                                <p class="rate-descrip-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia recusandae quo dolore voluptatem iusto est, voluptatibus nulla laborum, doloribus, hic maiores aut quidem nam repudiandae fuga. Voluptate dolorem, expedita sed magnam dolor distinctio a blanditiis soluta sequi pariatur obcaecati quam amet nesciunt iusto aspernatur numquam, alias consequatur minus ratione earum.</p>
+                              </div>
+                            </div> 
+                          </div>
+                  
+                          <!--Comment-box-->
+                          <div class="comment-container">
+                            <div class="user-comment">
+                                <h2>Comments</h2>
+                            </div> 
+                            <form id="commentForm" method="POST" action="save_comment.php">
+                              <textarea id="commentInput" name="comment" maxlength="250" placeholder="Type your thoughts..." required></textarea>
+                              <div class="footer">
+                                <span id="charCount">0/250</span>
+                                <button type="submit" id="submitBtn" disabled>Post</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                    </div> 
+                </div>
+          </div><!--main content-->
+        </div><!--main-->
+
+
+
+      
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="../js/dash2.js"></script>
+</body>
+
+</html>

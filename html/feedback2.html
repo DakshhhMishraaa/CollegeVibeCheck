@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Autocomplete Search</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .search-box {
+      position: relative;
+      width: 300px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      outline: none;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      border-color: #007bff;
+    }
+
+    .autocomplete-list {
+      position: absolute;
+      top: 110%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 999;
+    }
+
+    .autocomplete-item {
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .autocomplete-item:hover {
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search for something...">
+  <div id="autocompleteList" class="autocomplete-list"></div>
+</div>
+
+<script>
+  const suggestions = [
+    'KJ Somaiya College of Engineering', 'DJ Sanghavi', 'NMIMS College of Engineering', 'VJTI College of Engineering'
+  ];
+
+  const input = document.getElementById('searchInput');
+  const list = document.getElementById('autocompleteList');
+
+  input.addEventListener('input', () => {
+    const query = input.value.toLowerCase();
+    list.innerHTML = "";
+
+    if (!query) return;
+
+    const filtered = suggestions.filter(item => item.toLowerCase().includes(query));
+    filtered.forEach(item => {
+      const div = document.createElement('div');
+      div.classList.add('autocomplete-item');
+      div.textContent = item;
+      div.addEventListener('click', () => {
+        input.value = item;
+        list.innerHTML = "";
+      });
+      list.appendChild(div);
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-box')) {
+      list.innerHTML = "";
+    }
+  });
+</script>
+
+</body>
+</html>

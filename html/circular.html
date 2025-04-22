@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Circular Rating Display</title>
+  <style>
+    .circle-rating {
+      --rating: 3.5; /* Example initial rating */
+      --size: 150px;
+      --thickness: 15px;
+      --percent: calc((var(--rating) / 5) * 100);
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      background:
+        conic-gradient(
+          var(--color) 0 calc(var(--percent) * 1%),
+          #ddd calc(var(--percent) * 1%) 100%
+        );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .circle-rating::before {
+      content: '';
+      position: absolute;
+      width: calc(var(--size) - var(--thickness) * 2);
+      height: calc(var(--size) - var(--thickness) * 2);
+      background: #fff;
+      border-radius: 50%;
+    }
+    .circle-rating .rating-text {
+      position: relative;
+      font-size: 40px;
+      font-weight: bold;
+      color: #333;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div id="rating" class="circle-rating">
+  <div class="rating-text" id="ratingText">3.5/5</div>
+</div>
+
+<script>
+  function setCircularRating(elementId, rating) {
+    const el = document.getElementById(elementId);
+    const textEl = el.querySelector('.rating-text');
+    const colorMap = [
+      { max: 1, color: '#ff4d4f' },       // Poor
+      { max: 2, color: '#ff944d' },       // Average
+      { max: 3, color: '#ffc107' },       // Good
+      { max: 4, color: '#69d100' },       // Great
+      { max: 5, color: '#28a745' }        // Excellent
+    ];
+    // Calculate percent (0–100)
+    const percent = (rating / 5) * 100;
+    // Find color
+    const { color } = colorMap.find(entry => rating <= entry.max);
+    // Update CSS vars
+    el.style.setProperty('--rating', rating);
+    el.style.setProperty('--percent', percent);
+    el.style.setProperty('--color', color);
+    // Update text
+    textEl.textContent = `${rating}/5`;
+  }
+
+  // Example usage:
+  setCircularRating('rating', 3.5);
+</script>
+
+</body>
+</html>
